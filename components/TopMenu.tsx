@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import ThemeButton from './ui/ThemeButton';
 
 export function TopMenu() {
   return (
@@ -10,7 +11,8 @@ export function TopMenu() {
           <img src="/logo.svg" alt="Self.so Logo" className="h-[30px] w-auto" />
         </Link>
 
-        <div>
+        <div className="flex flex-row gap-3 font-mono">
+          <ThemeButton />
           <SignedIn>
             {/* User is signed in */}
             <UserButton />
@@ -24,7 +26,7 @@ export function TopMenu() {
               >
                 <Button
                   variant="outline"
-                  className=" flex flex-row gap-1.5 py-2 px-4 border-gray-300 text-design-gray text-sm font-medium"
+                  className=" flex flex-row gap-1.5 py-2 px-4 dark:border-gray-600 dark:text-white border-gray-300 text-design-gray text-sm font-medium"
                 >
                   <img
                     src="/github.svg"
@@ -37,7 +39,7 @@ export function TopMenu() {
               <Link href="/upload">
                 <Button
                   variant="default"
-                  className="text-sm font-medium py-2 px-4 bg-design-black hover:bg-design-black/95"
+                  className="text-sm font-medium py-2 px-4 dark:bg-white bg-design-black hover:bg-design-black/95"
                 >
                   Sign up
                 </Button>
